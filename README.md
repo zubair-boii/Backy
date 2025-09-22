@@ -39,11 +39,12 @@ copying saves into a chosen backup location.
     Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     installed
 
-### Installation
+
+<!-- ### Installation
 
 1.  Download the latest release from [Releases](../../releases).\
 2.  Run the **Backy Setup.exe** installer.\
-3.  Launch **Backy** from Start Menu or Desktop shortcut.
+3.  Launch **Backy** from Start Menu or Desktop shortcut. -->
 
 ------------------------------------------------------------------------
 
