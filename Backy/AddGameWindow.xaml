@@ -1,0 +1,45 @@
+﻿<Window x:Class="Backy.AddGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Backy"
+        mc:Ignorable="d"
+        Title="AddGameWindow"
+        Height="200" 
+        Width="300"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Game Name -->
+        <TextBlock Text="Game Name:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="5"/>
+        <TextBox Name="GameNameBox" Grid.Row="0" Grid.Column="1" Margin="5" Padding="5 1"/>
+
+        <!-- Save Location -->
+        <TextBlock Text="Save Location" Grid.Row="1" Margin="5"/>
+        <TextBox Name="SaveLocationBox" Grid.Row="1" Grid.Column="1" Margin="5" Padding="5 1"/>
+        <Button Name="BrowseBtn" Content="Browse" Grid.Row="1" Grid.Column="2" Margin="5"  Padding="5 1" Click="BrowseBtn_Click" />
+
+        <!-- Buttons -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2" 
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="5">
+            <Button Name="OkBtn" Content="OK" Width="80" Margin="5" Click="OkBtn_Click"/>
+            <Button Name="CancelBtn" Content="Cancel" Width="80" Margin="5" Click="CancelBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

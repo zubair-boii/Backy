@@ -1,0 +1,58 @@
+﻿<Window x:Class="Backy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Backy"
+        mc:Ignorable="d"
+        Title="Backy - by Zubair Khan"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="400"
+        MinWidth="600"
+        Height="400"
+        Width="800">
+
+    <Window.Resources>
+        <!-- Converter for showing ✅ or ❌ -->
+        <local:BoolToBackupIconConverter x:Key="BoolToBackupIconConverter"/>
+    </Window.Resources>
+
+    <Grid Margin="10 10 10 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="Add a Game" Margin="0 0 10 0" Padding="5" Name="addAGame" Click="addAGame_Click"/>
+            <Separator Width="10" Margin="0 0 10 0" />
+            <Button Content="Backup" Margin="0 0 10 0" Padding="5" Click="BackupBtn_Click"/>
+            <Separator Width="10" Margin="0 0 10 0" />
+            <Button Content="Restore" Margin="0 0 10 0" Padding="5" Name="restoreBtn" Click="restoreBtn_Click"  />
+            <Separator Width="10" Margin="0 0 10 0" />
+            <Button Content="Delete" Margin="0 0 10 0" Padding="5" Name="delBtn" Click="delBtn_Click"/>
+            <Separator Width="10" Margin="0 0 10 0" />
+            <Button Name="StoreBtn" Content="Store" Margin="0 0 10 0" Padding="5" Click="StoreBtn_Click"/>
+            <Label Name="lblStorePth" Content="Store Location: " Margin="10 0 0 0" Padding="5" />
+        </StackPanel>
+
+        <ListView x:Name="mainList" Grid.Row="1" Margin="0 10 0 0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding name}" />
+                    <GridViewColumn Header="Save Path" Width="250" DisplayMemberBinding="{Binding saveLocation}" />
+                    <GridViewColumn Header="Backup Status" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IsBackedUp, Converter={StaticResource BoolToBackupIconConverter}}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>
