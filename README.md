@@ -62,9 +62,9 @@ copying saves into a chosen backup location.
 
 ------------------------------------------------------------------------
 
-## 📸 Screenshots
+<!-- ## 📸 Screenshots
 
-*(Add your screenshots here --- UI, backup confirmation, etc.)*
+*(Add your screenshots here --- UI, backup confirmation, etc.)* -->
 
 ------------------------------------------------------------------------
 
